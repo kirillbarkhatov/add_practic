@@ -8,13 +8,10 @@ def scan_dir(path_folder: str = os.getcwd(), recurs: bool = False) -> dict:
         count_files = 0
         count_folders = 0
 
-
         if recurs:
             for root, dirs, files in os.walk(path_folder):
                 count_files += len(files)
                 count_folders += len(dirs)
-
-
 
         else:
             dirs_files = os.scandir(path_folder)
@@ -32,6 +29,7 @@ def scan_dir(path_folder: str = os.getcwd(), recurs: bool = False) -> dict:
         return result
 
     return "Папки по указанному пути не существует или путь указан не верно"
+
 
 if __name__ == "__main__":
     path = "/Users/kirill_barkhatov/PycharmProjects/add_practic/src"
